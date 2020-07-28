@@ -6,6 +6,9 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose')
 dotenv.config();
 
+//import models
+const User = require('./models/user');
+
 mongoose.connect(process.env.DB, {
   useCreateIndex: true,
   useFindAndModify: true,
@@ -16,3 +19,11 @@ mongoose.connect(process.env.DB, {
 }).catch(err => {
   console.log(err);
 })
+
+//Add a new user
+
+
+//Find user
+
+
+
