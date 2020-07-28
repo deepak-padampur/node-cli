@@ -48,10 +48,41 @@ const findUser = (name) => {
 
 }
 
+//Update user data
+const updateUser = (_id, user) => {
+  User.update({ _id }, user).then(user => {
+    console.info('User data updated')
+    db.close()
+  })
+
+}
+//Remove user data
+const removeUser = (_id) => {
+  User.remove({ _id }).then(user => {
+    console.info('User data Removed')
+    db.close()
+  })
+
+}
+
+
+//Listing users
+
+const listUser = () => {
+  User.find().then(users => {
+    console.info(users);
+    console.info(`${users.length} matches`)
+    db.close()
+  })
+}
+
 //Export all methods
 module.exports = {
   addUser,
-  findUser
+  findUser,
+  updateUser,
+  removeUser,
+  listUser
 }
 
 
