@@ -3,12 +3,13 @@
  * @description Connecting to database
  */
 const dotenv = require('dotenv');
-const mongoose = require('mongoose')
 dotenv.config();
+const mongoose = require('mongoose')
+
 
 //Map global promise to get rid of warning
 mongoose.Promise = global.Promise;
-
+console.log(typeof (process.env.DB))
 //import models
 const User = require('./models/user');
 mongoose.connect(process.env.DB, {
@@ -16,6 +17,10 @@ mongoose.connect(process.env.DB, {
   useFindAndModify: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
+}).then(con => {
+  console.log('Connected..')
+}).catch(err => {
+  console.log(err)
 })
 
 const db = mongoose.connection;
