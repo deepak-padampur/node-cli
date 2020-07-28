@@ -6,19 +6,20 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose')
 dotenv.config();
 
+//Map global promise to get rid of warning
+mongoose.Promise = global.Promise;
+
 //import models
 const User = require('./models/user');
-
-const db = mongoose.connect(process.env.DB, {
+mongoose.connect(process.env.DB, {
   useCreateIndex: true,
   useFindAndModify: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(con => {
-  console.log('Connected....')
-}).catch(err => {
-  console.log(err);
 })
+
+const db = mongoose.connection;
+
 
 
 //Add a new user
