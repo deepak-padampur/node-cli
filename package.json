@@ -1,5 +1,5 @@
 {
-  "name": "node-deepak-cli",
+  "name": "node-cli",
   "engines": {
     "node": "12.14.1"
   },
@@ -19,7 +19,6 @@
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "Deepak",
   "license": "ISC",
   "dependencies": {
     "commander": "^6.0.0",
