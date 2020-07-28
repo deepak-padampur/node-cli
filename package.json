@@ -1,11 +1,13 @@
 {
-  "name": "cli",
+  "name": "node-cli",
   "engines": {
     "node": "12.14.1"
   },
   "version": "1.0.0",
   "description": "node-commandline-tool",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": "./commands.js",
   "scripts": {
     "start": "nodemon index.js"
   },
