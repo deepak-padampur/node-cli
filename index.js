@@ -9,7 +9,7 @@ dotenv.config();
 //import models
 const User = require('./models/user');
 
-mongoose.connect(process.env.DB, {
+const db = mongoose.connect(process.env.DB, {
   useCreateIndex: true,
   useFindAndModify: true,
   useNewUrlParser: true,
@@ -20,10 +20,38 @@ mongoose.connect(process.env.DB, {
   console.log(err);
 })
 
-//Add a new user
 
+//Add a new user
+const addUser = (user) => {
+
+  User.create(user).then(user => {
+    console.info('New customer added');
+    //Close DB----other wise it will hang
+    db.close()
+
+  })
+
+}
 
 //Find user
+
+const findUser = (name) => {
+  //Make a case insensitive
+  const searchQuery = new RegExp(name, 'i');
+
+  User.find({ $or: [{ firstname: searchQuery }, { lastname: searchQuery }] }).then(user => {
+    console.info(user);
+    console.info(`${user.length} matches`)
+    db.close()
+  })
+
+}
+
+//Export all methods
+module.exports = {
+  addUser,
+  findUser
+}
 
 
 
