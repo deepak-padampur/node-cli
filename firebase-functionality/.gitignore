@@ -9,7 +9,7 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
-./functions/permissions.json
+.functions/permissions.json
 
 # Firebase config
 
