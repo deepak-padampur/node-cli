@@ -17,7 +17,7 @@
   "preferGlobal": true,
   "bin": "./commands.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon ./my-project/functions/index.js"
   },
   "license": "ISC",
   "dependencies": {

@@ -2,7 +2,9 @@
 
 const program = require('commander');
 const { prompt } = require('inquirer')
-const { addUser, findUser, updateUser, removeUser, listUser } = require('./index');
+// const { findUser, updateUser, removeUser, listUser } = require('./index');
+const { addUser, listUser, removeUser, findUser } = require('./my-project/functions/index.js')
+
 
 //Prompt question for user
 const questions = [{
@@ -55,24 +57,24 @@ program
   })
 //Update user
 program
-  .command('update <_id>')
+  .command('update <id>')
   .alias('u')
   .description('Update a user')
-  .action((_id) => {
-    prompt(questions).then(answers => updateUser(_id, answers))
+  .action((id) => {
+    prompt(questions).then(answers => updateUser(id, answers))
 
   })
 
 //Remove user
 program
-  .command('remove <_id>')
+  .command('remove <id>')
   .alias('r')
   .description('Remove a user')
-  .action((_id) => {
-    removeUser(_id)
+  .action((id) => {
+    removeUser(id)
   })
 
-//List user
+// //List user
 program
   .command('List')
   .alias('l')
