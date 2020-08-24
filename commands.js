@@ -3,7 +3,7 @@
 const program = require('commander');
 const { prompt } = require('inquirer')
 // const { findUser, updateUser, removeUser, listUser } = require('./index');
-const { addUser, listUser, removeUser, findUser } = require('./firebase-functionality/functions/index.js.js')
+const { addUser, listUser, removeUser, findUser } = require('./firebase-functionality/functions/index.js')
 
 
 //Prompt question for user
