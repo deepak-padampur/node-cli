@@ -6,7 +6,7 @@
   "version": "1.0.1",
   "description": "node-commandline-tool",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/node-firebase-cli"
   },
   "homepage": "https://github.com/deepak-padampur/node-cli#readme",
   "repository": {
