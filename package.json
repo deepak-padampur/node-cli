@@ -17,7 +17,7 @@
   "preferGlobal": true,
   "bin": "./commands.js",
   "scripts": {
-    "start": "nodemon ./my-project/functions/index.js"
+    "start": "nodemon ./firebase-functionality/functions/index.js"
   },
   "license": "ISC",
   "dependencies": {
