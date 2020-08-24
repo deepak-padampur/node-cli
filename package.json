@@ -24,7 +24,6 @@
     "commander": "^6.0.0",
     "dotenv": "^8.2.0",
     "inquirer": "^7.3.3",
-    "mongoose": "^5.9.26",
     "nodemon": "^2.0.4"
   }
 }
